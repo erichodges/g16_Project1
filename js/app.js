@@ -21,11 +21,10 @@ function practice(data) {
     // debugger;
 
     var pracTime = parseInt(form.practice_time) * 60000
-    console.log(pracTime);
     if (form.ability === 'beginner') {
         images(data.beginner);
         showSequenceBeginner(pracTime);
-    } 
+    }
     if (form.ability === 'intermediate') {
     	console.log("intermediate")
         images(data.intermediate);
@@ -39,29 +38,44 @@ function practice(data) {
 
 function images(data) {
     for (var i = 1; i <= data.length; i++) {
-        $('#image-display').append('<img id="image-' + i + '" src="img/yoga_images/' + i + '.jpg" />');
-
-        $('img').hide()
-        
+        $('#image-display').append('<div class="pose" id="image-' + i + '"><img class="yogapose" src="img/yoga_images/' + i + '.jpg" /></div>');
+        $('.pose').hide()
+        $('#thumbnails').append('<img class="thumbnail" id="thumbnail-image-' + i + '" src="img/yoga_images/' + i + '.jpg" />');
     }
+
+    // $('#thumbnails').on('click',"img",function(evt){
+    //
+    // })
 
 }
 //select 1st image
 	//show 1st image
 	//after 5 sec hide 1st image
-	//show next image 
+	//show next image
 	//loop back for next image
 
 function showSequenceBeginner(userTime) {
 
-	// userTime gives the variable that was passed in 
+	// userTime gives the variable that was passed in
 
-	
+  $('#thumbnail-image-1').css("border", "3px solid red");
 
 	$('#image-1').fadeIn('slow').delay(userTime/4).fadeOut(1,function(){
+    $('#thumbnail-image-1').css("border", "none");
+    $('#thumbnail-image-2').css("border", "3px solid red");
+
 		$('#image-2').fadeIn('slow').delay(userTime/4).fadeOut(1,function(){
+      $('#thumbnail-image-2').css("border", "none");
+      $('#thumbnail-image-3').css("border", "3px solid red");
+
 			$('#image-3').fadeIn('slow').delay(userTime/4).fadeOut(1,function(){
+        $('#thumbnail-image-3').css("border", "none");
+        $('#thumbnail-image-4').css("border", "3px solid red");
+
 				$('#image-4').fadeIn('slow').delay(userTime/4).fadeOut(1,function(){
+          $('#thumbnail-image-3').css("border", "none");
+          $('#thumbnail-image-4').css("border", "3px solid red");
+
 				})
 			})
 		})
@@ -71,7 +85,7 @@ function showSequenceBeginner(userTime) {
 
 function showSequenceIntermediate(userTime) {
 
-	
+
 
 	$('#image-1').fadeIn('slow').delay(userTime/5).fadeOut(1,function(){
 		$('#image-2').fadeIn('slow').delay(userTime/5).fadeOut(1,function(){
@@ -98,18 +112,3 @@ function showSequenceAdvanced(userTime) {
 	})
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
