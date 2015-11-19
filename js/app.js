@@ -112,4 +112,3 @@ function showSequenceAdvanced(userTime) {
 
 
 
-
