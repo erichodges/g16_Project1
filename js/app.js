@@ -39,13 +39,14 @@ function practice(data) {
 function images(data) {
     for (var i = 1; i <= data.length; i++) {
         $('#image-display').append('<div class="pose" id="image-' + i + '"><img class="yogapose" src="img/yoga_images/' + i + '.jpg" /></div>');
-        $('.pose').hide()
+        $('.pose').hide();
         $('#thumbnails').append('<img class="thumbnail" id="thumbnail-image-' + i + '" src="img/yoga_images/' + i + '.jpg" />');
     }
 
-    // $('#thumbnails').on('click',"img",function(evt){
-    //
-    // })
+    $('#thumbnails').on('click',"img",function(evt){
+      $('.pose').hide();
+      $(this).show();
+    })
 
 }
 //select 1st image
