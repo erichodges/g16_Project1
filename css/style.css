@@ -2,3 +2,15 @@
     padding-right:0;
     padding-left:0;
 }
+
+.yogapose {
+  height: 500px;
+}
+
+.thumbnail {
+  height: 100px;
+}
+
+#image-display-holder {
+	height: 500px;
+}
