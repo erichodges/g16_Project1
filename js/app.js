@@ -20,7 +20,7 @@ function practice(data) {
     //
     // debugger;
 
-    var pracTime = parseInt(form.practice_time) * 5000 //60000, is correct 
+    var pracTime = parseInt(form.practice_time) * 10000 //60000, is correct 
     if (form.ability === 'beginner') {
         images(data.beginner);
         showSequenceBeginner(pracTime);
